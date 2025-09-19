@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+body, html {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("https://wallpaperaccess.com/download/4k-gif-8642919") no-repeat center center/cover;
+}
+
+h4 {
+    position: absolute;
+    top: 1rem;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 0.1rem;
+}
+
+.container {
+    width: 20%;
+    height: 45%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+    border-radius: 50%;
+    z-index: 999;
+    animation: rotate 10s linear infinite;
+    background-color: red;
+}
+
+.container:hover {
+    width: 25%;
+    height: 75%;
+    border-radius: 10% 10% 0 0;
+}
+
+.container:hover img {
+    width: 50%;
+    height: 37%;
+    top: 25%;
+    left: 25%;
+    top: 1rem;
+    animation: none;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.containercontent {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    padding: 1rem;
+    text-align: center; 
+    opacity: 0;
+    transition: .5s;
+}
+.container:hover .containercontent {
+    opacity: 1;
+}
+
+.containercontent h1 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+.containercontent p {
+    font-size: .9rem;
+    margin-bottom: 1rem;
+}
+
+.containercontent .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.containercontent .socials a {
+    width: 2rem;
+    height: 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: .3s;
+}
+.containercontent .socials a:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.containercontent .socials a i {
+    pointer-events: none;
+}
+
+
+/* responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 40%;
+        height: 50%;
+        justify-content: space-between;
+    }
+    .container:hover {
+        width: 80%;
+        height: 90%;
+    }
+    .container:hover img {
+    width: 30%;
+    height: 35%;
+    top: 50%;
+    left: 35%;
+    top: 1rem;
+    animation: none;
+}
+
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 60%;
+        height: 31%;
+        justify-content: space-between;
+    }
+    .container:hover {
+        width: 80%;
+        height: 90%;
+    }
+    .container:hover img {
+        width: 50%;
+        height: 24%;
+        left: 25%;
+        animation: none;
+    }
+
+    .containercontent {
+        height: 70%;
+    }
+}
